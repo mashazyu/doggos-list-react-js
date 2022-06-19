@@ -1,4 +1,4 @@
-import { Flex, Spacer, Text } from '@chakra-ui/react';
+import { Box, Flex, Text, SimpleGrid } from '@chakra-ui/react';
 
 import SectionedList from './components/SectionedList';
 import useInput from './hooks/useInput';
@@ -9,14 +9,14 @@ function App() {
   const [grouping, selectionInput] = useSelection();
 
   return (
-    <Flex direction="column" p='5%' w='90%'>
-      <Flex pb='5%'>
+    <Flex direction="column" p='5%' w='100%'>
+      <SimpleGrid minChildWidth='250px' spacing='40px' pb='5%'>
         {filterInput}
-        <Spacer />
-        <Text pl='5%' pr='5%' w='100%'>Group by:</Text>
-        <Spacer />
-        {selectionInput}
-      </Flex>
+        <Flex>
+          <Text minWidth='100px'>Group by:</Text>
+          {selectionInput}
+        </Flex>
+      </SimpleGrid>
       <SectionedList grouping={grouping} filter={filter} />
     </Flex>
   );
