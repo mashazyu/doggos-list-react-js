@@ -1,13 +1,14 @@
 import { useState } from 'react';
+import { Select } from '@chakra-ui/react';
 
 function useSelection() {
   const [value, setValue] = useState('name');
   const handleSelection = (e) => setValue(e.target.value);
-  const selection =  <select value={value} onChange={handleSelection}>
+  const selection = <Select value={value} onChange={handleSelection}>
     <option value="name">Name</option>
     <option value="company">Company</option>
     <option value="country">Country</option>
-  </select>
+  </Select>
 
   return [value, selection];
 }
