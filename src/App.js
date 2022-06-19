@@ -1,12 +1,11 @@
-import List from './components/List';
+import SectionedList from './components/SectionedList';
 
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <List />
-      <p>this is start</p>
+      <SectionedList />
     </div>
   );
 }

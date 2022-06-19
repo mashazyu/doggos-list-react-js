@@ -1,7 +1,7 @@
-import data from '../data/index.js';
 import './List.css';
+import { getSectionedList } from '../helpers';
 
-function List() {
+function List({ data }) {
   const listItems = data.map(({ guid, name, date, company }) =>
     (<li key={guid}>{name} {date} {company}</li>)
   );
