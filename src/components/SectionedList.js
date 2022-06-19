@@ -1,10 +1,19 @@
-import { Box, Flex, Heading, SimpleGrid } from '@chakra-ui/react';
+import React, { useContext } from "react";
+import { Box, Flex, Heading, SimpleGrid, Spinner  } from '@chakra-ui/react';
+
+import { DataContext } from '../contexts/DataContext';
 import SubList from './SubList';
 import { getSectionedList } from '../helpers';
 
 function SectionedList({ grouping, filter }) {
-  const data = getSectionedList(grouping, filter);
-  const listItems = data.map(({ title, items}) => {
+  const data = useContext(DataContext);
+
+  if (data.length === 0) {
+    return <Spinner />
+  }
+
+  const groupedData = getSectionedList(data, grouping, filter);
+  const listItems = groupedData.map(({ title, items}) => {
     return (
       <Flex justify='flex-start' key={title} maxWidth='300px'>
         <Box pr='15%'>
