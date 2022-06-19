@@ -1,4 +1,4 @@
-export default [
+const data = [
 	{
 		"name": "Sean Jimenez",
 		"date": "Sep 6, 2022",
@@ -54,5 +54,28 @@ export default [
 		"company": "Fermentum Risus At Ltd",
 		"guid": "99E48FEF-BD8E-5B5F-A9FB-64C98CA8B1C2",
 		"country": "Canada"
+	},
+	{
+		"name": "Jonah Padilla",
+		"date": "Apr 20, 2022",
+		"company": "Fermentum Risus At Ltd",
+		"guid": "99E48FEF-BD8E-5B5F-A9FB-64C98CA8B1C3",
+		"country": "Canada"
+	},
+	{
+		"name": "Jonah Padilla",
+		"date": "Apr 20, 2022",
+		"company": "Fermentum Risus At Ltd",
+		"guid": "99E48FEF-BD8E-5B5F-A9FB-64C98CA8B1C4",
+		"country": "Canada"
+	},
+	{
+		"name": "Jonah Padilla",
+		"date": "Apr 20, 2022",
+		"company": "Fermentum Risus At Ltd",
+		"guid": "99E48FEF-BD8E-5B5F-A9FB-64C98CA8B1C5",
+		"country": "Canada"
 	}
 ];
+
+export default data;
