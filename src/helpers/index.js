@@ -1,13 +1,9 @@
 import rawData from '../data/index.js';
 
-const getFilteredData = (rawFilter) => {
+const getFilteredData = (grouping, rawFilter) => {
   const filter = rawFilter.toLowerCase();
 
-  return rawData.filter(({ name, company, country }) => {
-    return name.toLowerCase().includes(filter)
-      || company.toLowerCase().includes(filter)
-      || country.toLowerCase().includes(filter);
-  });
+  return rawData.filter(item => item[grouping].toLowerCase().includes(filter));
 }
 
 const getFirstLetter = (grouping, data) =>
@@ -17,7 +13,7 @@ const getFirstLetter = (grouping, data) =>
   );
 
 export const getSectionedList = (grouping, filter) => {
-  const filteredData = getFilteredData(filter);
+  const filteredData = getFilteredData(grouping, filter);
   const sectionTitles = getFirstLetter(grouping, filteredData);
   const sections = Array.from(sectionTitles).map((title) => {
     const items = filteredData.filter((item) => item[grouping].charAt(0) === title);
