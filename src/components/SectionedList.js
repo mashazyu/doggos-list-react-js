@@ -16,7 +16,7 @@ function SectionedList({ grouping, filter }) {
   const listItems = groupedData.map(({ title, items}) => {
     return (
       <Flex justify='flex-start' key={title} maxWidth='300px'>
-        <Box pr='15%'>
+        <Box pr='10%'>
           <Heading>{title}</Heading>
         </Box>
         <SubList data={items} />
