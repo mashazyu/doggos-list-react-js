@@ -1,15 +1,18 @@
+import { useState } from 'react';
 import SectionedList from './components/SectionedList';
 import useInput from './hooks/useInput';
-
+import useSelection from './hooks/useSelection';
 import './App.css';
 
 function App() {
   const [filter, filterInput] = useInput({ placeholder: 'filter' });
-  
+  const [grouping, selectionInput] = useSelection();
+
   return (
     <div className="App">
       {filterInput}
-      <SectionedList filter={filter} />
+      {selectionInput}
+      <SectionedList grouping={grouping} filter={filter} />
     </div>
   );
 }

@@ -2,8 +2,8 @@ import './SectionedList.css';
 import List from './List';
 import { getSectionedList } from '../helpers';
 
-function SectionedList({ filter }) {
-  const data = getSectionedList(filter);
+function SectionedList({ grouping, filter }) {
+  const data = getSectionedList(grouping, filter);
   const listItems = data.map(({ title, items}) => {
     return (
       <div key={title}>

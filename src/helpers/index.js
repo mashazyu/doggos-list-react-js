@@ -10,13 +10,17 @@ const getFilteredData = (rawFilter) => {
   });
 }
 
-const getFirstLetter = (data) => new Set(data.map(({ name }) => name.charAt(0)));
+const getFirstLetter = (grouping, data) =>
+  new Set(data
+    .map((item) => item[grouping].charAt(0))
+    .sort()
+  );
 
-export const getSectionedList = (filter) => {
+export const getSectionedList = (grouping, filter) => {
   const filteredData = getFilteredData(filter);
-  const sectionTitles = getFirstLetter(filteredData);
+  const sectionTitles = getFirstLetter(grouping, filteredData);
   const sections = Array.from(sectionTitles).map((title) => {
-    const items = filteredData.filter(({ name }) => name.charAt(0) === title);
+    const items = filteredData.filter((item) => item[grouping].charAt(0) === title);
 
     return { title, items };
   });

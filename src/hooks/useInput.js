@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 function useInput(opts) {
-  const [value, setValue] = React.useState('');
+  const [value, setValue] = useState('');
   const input = <input
     value={value}
     onChange={e => setValue(e.target.value)}
