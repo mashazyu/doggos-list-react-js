@@ -1,9 +1,8 @@
 import './List.css';
-import { getSectionedList } from '../helpers';
 
 function List({ data }) {
   const listItems = data.map(({ guid, name, company, country }) =>
-    (<li key={guid}>{name} {company} {country}</li>)
+    <li key={guid}>{name} {company} {country}</li>
   );
 
   return (

@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
-function useInput(opts) {
+function useInput() {
   const [value, setValue] = useState('');
   const input = <input
     value={value}
     onChange={e => setValue(e.target.value)}
-    {...opts} />
+    placeholder='filter' />
 
   return [value, input];
 }
