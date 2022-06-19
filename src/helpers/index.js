@@ -1,11 +1,22 @@
-import data from '../data/index.js';
+import rawData from '../data/index.js';
 
-const getFirstLetter = () => new Set(data.map(({ name }) => name.charAt(0)));
+const getFilteredData = (rawFilter) => {
+  const filter = rawFilter.toLowerCase();
 
-export const getSectionedList = () => {
-  const sectionTitles = getFirstLetter();
+  return rawData.filter(({ name, company, country }) => {
+    return name.toLowerCase().includes(filter)
+      || company.toLowerCase().includes(filter)
+      || country.toLowerCase().includes(filter);
+  });
+}
+
+const getFirstLetter = (data) => new Set(data.map(({ name }) => name.charAt(0)));
+
+export const getSectionedList = (filter) => {
+  const filteredData = getFilteredData(filter);
+  const sectionTitles = getFirstLetter(filteredData);
   const sections = Array.from(sectionTitles).map((title) => {
-    const items = data.filter(({ name }) => name.charAt(0) === title);
+    const items = filteredData.filter(({ name }) => name.charAt(0) === title);
 
     return { title, items };
   });
