@@ -12,10 +12,11 @@ function SectionedList({ grouping, filter }) {
       </div>
     );
   });
+  const errorMessage = <p>No entries found</p>;
 
   return (
     <div>
-      {listItems}
+      {listItems.length !== 0 ? listItems : errorMessage}
     </div>
   );
 }
