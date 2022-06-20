@@ -9,6 +9,8 @@ The goal of the project is to implement a simple page that
 
 For styling of the page was used Chakra UI component library. Also some basic tests are introduced.
 
+You can check out the result online here - [https://stiff-current.surge.sh/](https://stiff-current.surge.sh/).
+
 ## Technical Details
 
 - This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
