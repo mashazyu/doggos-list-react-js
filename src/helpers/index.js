@@ -23,11 +23,17 @@ const getFirstLetter = (grouping, data) =>
       .sort()
   );
 
+const sortByGrouping = (items, grouping) =>
+  items.sort((a, b) => a[grouping].localeCompare(b[grouping]));
+
 export const getSectionedList = (data, grouping, filter) => {
   const filteredData = getFilteredData(data, grouping, filter);
   const sectionTitles = getFirstLetter(grouping, filteredData);
   const sections = Array.from(sectionTitles).map(title => {
-    const items = filteredData.filter((item) => item[grouping].charAt(0) === title);
+    const items = sortByGrouping(
+      filteredData.filter((item) => item[grouping].charAt(0) === title),
+      grouping
+    );
 
     return { title, items };
   });
