@@ -11,13 +11,13 @@ function App() {
 
   return (
     <DataContextProvider>
-      <Flex direction="column" p='5%' w='100%'>
+      <Flex direction='column' m='auto' maxWidth='1400px' p='5%' w='100%'>
         <SimpleGrid minChildWidth='250px' spacing='40px' pb='5%'>
-          {filterInput}
           <Flex>
             <Text minWidth='100px'>Group by:</Text>
             {selectionInput}
           </Flex>
+          {filterInput}
         </SimpleGrid>
         <SectionedList grouping={grouping} filter={filter} />
       </Flex>
