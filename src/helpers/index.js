@@ -1,8 +1,7 @@
 import { faker } from '@faker-js/faker';
 
-export const getMockedData = (images) => {
-  return images
-    .slice(0, 49)
+export const getMockedData = (images) => images
+    .slice(0, 50) // takes the first 50 array elements
     .map(image => ({
       guid: faker.datatype.uuid(),
       name: faker.name.findName(),
@@ -10,7 +9,6 @@ export const getMockedData = (images) => {
       country: faker.address.country(),
       image
     }));
-}
 
 const getFilteredData = (data, grouping, rawFilter) => {
   const filter = rawFilter.toLowerCase();
