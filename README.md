@@ -17,7 +17,7 @@ For styling of the page was used Chakra UI component library. Also some basic te
 
 # Setup Instructions & Available Scripts
 
-First of all, please run `npm i` to install project dependancies.
+First of all, please run `npm i` to install project dependencies.
 
 In the project directory, you can run:
 
