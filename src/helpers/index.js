@@ -1,7 +1,6 @@
 import { faker } from '@faker-js/faker';
 
 export const getMockedData = (images) => images
-    .slice(0, 50) // takes the first 50 array elements
     .map(image => ({
       guid: faker.datatype.uuid(),
       name: faker.name.findName(),

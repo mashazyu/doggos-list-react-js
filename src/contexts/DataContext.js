@@ -8,7 +8,7 @@ const DataContextProvider = ({ children }) => {
 
   useEffect(() => {
     const fetchData = () => {
-      fetch('https://dog.ceo/api/breed/hound/images')
+      fetch('https://dog.ceo/api/breeds/image/random/50')
       .then(response => response.json())
       .then(({ message }) => setData(getMockedData(message)))
       .catch(error => console.log("An error occured"));
