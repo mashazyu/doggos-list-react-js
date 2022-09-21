@@ -1,5 +1,11 @@
 import { faker } from '@faker-js/faker';
 
+const DOG_IMAGES = [
+  'https://images.dog.ceo/breeds/collie-border/n02106166_7454.jpg',
+  'https://images.dog.ceo/breeds/terrier-norfolk/n02094114_3864.jpg',
+  'https://images.dog.ceo/breeds/hound-walker/n02089867_2267.jpg'
+]
+
 export const getMockedData = (images) => images
     .map(image => ({
       guid: faker.datatype.uuid(),
@@ -7,6 +13,15 @@ export const getMockedData = (images) => images
       company: faker.company.companyName(),
       country: faker.address.country(),
       image
+    }));
+
+export const getImages = (data) => data
+    .map((item, i) => ({
+      guid: item.id,
+      name: item.name,
+      company: item.company,
+      country: faker.address.country(),
+      image: DOG_IMAGES[i%3]
     }));
 
 const getFilteredData = (data, grouping, rawFilter) => {

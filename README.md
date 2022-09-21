@@ -35,3 +35,9 @@ You may also see any lint errors in the console.
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+## Configuration for doggo-api repo
+
+To make this app fetch data from the [doggo-api](https://github.com/mashazyu/doggo-api), please
+- run api locally following the instructions in repo (it is assumed that api is listening on http://127.0.0.1:3000),
+- in src/contexts/DataContext comment lines 10-15 and uncomment lines 17-26.
